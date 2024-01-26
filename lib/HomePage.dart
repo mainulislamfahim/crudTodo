@@ -40,13 +40,13 @@ class HomePage extends ConsumerWidget {
                   elevation: 3,
                   margin: const EdgeInsets.all(10),
                   child: ListTile(
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.edit,
                       color: Colors.green,
                     ),
                     title: Text(
                       task.title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                       ),
@@ -55,12 +55,12 @@ class HomePage extends ConsumerWidget {
                       onTap: () {
                         ref.read(taskProvider.notifier).remove(task);
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.delete,
                         color: Colors.red,
                       ),
                     ),
-                    onLongPress: () async {
+                    onTap: () async {
                       final updatedTask = await showDialog<String>(
                         context: context,
                         builder: (context) {
